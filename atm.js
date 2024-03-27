@@ -34,8 +34,13 @@ if (myAnswer.yourpin === pinCode) {
                 type: "number",
             },
         ]);
-        myBalance -= amountAns.amount;
-        console.log(`Your Remaining Balance is: ${myBalance}`);
+        if (amountAns.amount > myBalance) {
+            console.log("Insufficient balance. Please enter a valid amount.");
+        }
+        else {
+            myBalance -= amountAns.amount;
+            console.log(`Your Remaining Balance is: ${myBalance}`);
+        }
     }
     else if (operationAns.operation === "Cash 1000") {
         myBalance -= 1000;
