@@ -16,7 +16,14 @@ if (myAnswer.yourpin === pinCode) {
             name: "operation",
             type: "list",
             message: "Please select anyone option",
-            choices: ["Withdrawl", "Check your Balance"],
+            choices: [
+                "Cash 1000",
+                "Cash 2000",
+                "Cash 5000",
+                "Cash 10000",
+                "Withdrawl",
+                "Check your Balance",
+            ],
         },
     ]);
     if (operationAns.operation === "Withdrawl") {
@@ -29,6 +36,22 @@ if (myAnswer.yourpin === pinCode) {
         ]);
         myBalance -= amountAns.amount;
         console.log(`Your Remaining Balance is: ${myBalance}`);
+    }
+    else if (operationAns.operation === "Cash 1000") {
+        myBalance -= 1000;
+        console.log(`Your remaining balance is ${myBalance}`);
+    }
+    else if (operationAns.operation === "Cash 2000") {
+        myBalance -= 2000;
+        console.log(`Your remaining balance is ${myBalance}`);
+    }
+    else if (operationAns.operation === "Cash 5000") {
+        myBalance -= 5000;
+        console.log(`Your remaining balance is ${myBalance}`);
+    }
+    else if (operationAns.operation === "Cash 10000") {
+        myBalance -= 10000;
+        console.log(`Your remaining balance is ${myBalance}`);
     }
     else if (operationAns.operation === "Check your Balance") {
         console.log(`your balance is: ${myBalance}`);
