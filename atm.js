@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
+import chalk from "chalk";
 let myBalance = 60000; // USD
 let pinCode = 4545;
 let myAnswer = await inquirer.prompt([
@@ -63,5 +64,5 @@ if (myAnswer.yourpin === pinCode) {
     }
 }
 else {
-    console.log("Your Pin code is in Correct! Please re-enter your password");
+    console.log(chalk.red("Your Pin code is in-correct! Please re-enter your password"));
 }

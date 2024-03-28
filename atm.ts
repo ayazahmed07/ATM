@@ -1,5 +1,6 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
+import chalk from "chalk";
 import Choices from "inquirer/lib/objects/choices.js";
 
 let myBalance = 60000; // USD
@@ -64,5 +65,5 @@ if (myAnswer.yourpin === pinCode) {
     console.log(`your balance is: ${myBalance}`);
   }
 } else {
-  console.log("Your Pin code is in Correct! Please re-enter your password");
+  console.log(chalk.red("Your Pin code is in-correct! Please re-enter your password"));
 }
