@@ -1,13 +1,13 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
-let myBalance = 60000; // USD
+let myBalance = 160000; // USD
 let pinCode = 4545;
 let myAnswer = await inquirer.prompt([
     {
         name: "yourpin",
         type: "number",
-        message: "Please enter your pin code",
+        message: chalk.green("Please enter your pin code"),
     },
 ]);
 if (myAnswer.yourpin === pinCode) {
@@ -16,14 +16,15 @@ if (myAnswer.yourpin === pinCode) {
         {
             name: "operation",
             type: "list",
-            message: "Please select anyone option",
+            message: "Please select your transaction",
             choices: [
-                "Cash 1000",
-                "Cash 2000",
-                "Cash 5000",
-                "Cash 10000",
+                "Account Information",
+                "Deposit",
+                "Pin Change",
+                "Balance",
                 "Withdrawl",
-                "Check your Balance",
+                "Fast Cash",
+                "Bill Payment",
             ],
         },
     ]);
@@ -64,5 +65,5 @@ if (myAnswer.yourpin === pinCode) {
     }
 }
 else {
-    console.log(chalk.red("Your Pin code is in-correct! Please re-enter your password"));
+    console.log(chalk.red.bold.italic("Your Pin code is in-correct! Please re-enter your pin code"));
 }
